@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./libs/gsap/gsap.min.js" defer></script>
+    <script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="./libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+</head>
+<body>
+	
+    <div class="wrapper"> <!--тех элемент-->
+        <div class="content"> <!--тех элемент-->
+
+            <header class="header">
+                <div class="layers">
+                    <div class="layers__header-wrapper">
+                        <div class="layers__header-wrapper__caption">Just a few lines of computer code…</div>
+                        <div class="layers__header-wrapper__main-title">Magic Effect</div>
+                    </div>
+                    <div class="layer layers__base" style="background-image: url(./img/layer-base.png);"></div>
+                    <div class="layer layers__title" style="background-image: url(./img/layer-middle.png);"></div>
+                    <div class="layer layers__end" style="background-image: url(./img/layer-end.png);"></div>
+                </div>
+            </header>
+        
+            <article class="main-article" style="background-image: url(./img/dungeon.jpg);">
+                <div class="main-article__content">
+                    <h2 class="main-article__title">The parallax effect is applied here</h2>
+                    <p class="main-article__text">The <b class="main-article__text-bold">parallax effect</b> is a stunning visual technique that brings depth and dynamism to web design. As you scroll through a webpage, background images move more slowly than the foreground elements, creating an illusion of depth that captivates the viewer. This subtle movement transforms a flat, static page into an engaging and immersive experience, drawing the user’s attention and enhancing the overall aesthetic. By leveraging the parallax effect, we add a layer of sophistication to our designs, making content not only visually appealing but also memorable.</p>
+                </div>
+								<div class="copyright">© Pipchenkova Alina</div>
+						</article>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: transform .75s cubic-bezier(0.075, 0.5, 0, 1);
+    --color-text-light: #e7e7e0;
+    --color-dark: #010101;
+    --color-white: #fff;
+    --shadow: #9d822b;
+    --shadow-green: #428f82;
+    --will-change: transform;
+}

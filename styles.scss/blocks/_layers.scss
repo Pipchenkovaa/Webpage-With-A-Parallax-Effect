@@ -1,0 +1,44 @@
+.layers {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+
+    &__header-wrapper {
+        z-index: 1;
+        transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+        will-change: var(--transform);
+        text-transform: uppercase;
+        color: var(--color-text-light);
+        text-shadow: 0 0 14px var(--shadow);
+        transition: var(--transition);
+
+        &__caption {
+            font-size: calc(var(--index) * 1.1);
+            letter-spacing: calc(var(--index) / 5);
+            margin-top: calc(var(--index) * -4);
+        }
+    
+        &__main-title {
+            font-weight: 700;
+            font-size: calc(var(--index) * 2.5);
+            letter-spacing: calc(var(--index) / 2);
+        }
+    }
+
+    &__base {
+        transform: translate3d(0, calc(var(--scrollTop) / 1.5), 0);
+        z-index: 0;
+    }
+    
+    &__title {
+        transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+    }
+    
+    &__end {
+        transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
+    }
+}

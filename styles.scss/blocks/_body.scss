@@ -1,0 +1,10 @@
+body {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.55;
+}
+
+.content {
+    will-change: var(--transform);
+}

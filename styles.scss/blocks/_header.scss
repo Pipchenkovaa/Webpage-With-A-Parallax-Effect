@@ -1,0 +1,16 @@
+.header {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: calc(var(--index) * 10);
+        bottom: calc(var(--index) * -4.8);
+        background-image: url(../img/ground.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 100;
+    }
+}

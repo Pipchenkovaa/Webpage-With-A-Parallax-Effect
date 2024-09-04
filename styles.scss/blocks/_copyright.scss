@@ -1,0 +1,7 @@
+.copyright {
+    position: absolute;
+    bottom: calc(var(--index) * 2);
+    font-size: calc(var(--index) * 0.8);
+    letter-spacing: calc(var(--index) / 18);
+    opacity: 0.5;
+}

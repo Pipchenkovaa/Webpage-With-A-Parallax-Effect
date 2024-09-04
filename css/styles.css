@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: transform .75s cubic-bezier(0.075, 0.5, 0, 1);
+  --color-text-light: #e7e7e0;
+  --color-dark: #010101;
+  --color-white: #fff;
+  --shadow: #9d822b;
+  --shadow-green: #428f82;
+  --will-change: transform;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/raleway-regular.woff2) format("woff2");
+  font-style: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/raleway-black.woff2) format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+body {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.55;
+}
+
+.content {
+  will-change: var(--transform);
+}
+
+.header {
+  position: relative;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(var(--index) * 10);
+  bottom: calc(var(--index) * -4.8);
+  background-image: url(../img/ground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  will-change: var(--transform);
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.layers {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.layers__header-wrapper {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: var(--transform);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-shadow: 0 0 14px var(--shadow);
+  transition: var(--transition);
+}
+.layers__header-wrapper__caption {
+  font-size: calc(var(--index) * 1.1);
+  letter-spacing: calc(var(--index) / 5);
+  margin-top: calc(var(--index) * -4);
+}
+.layers__header-wrapper__main-title {
+  font-weight: 700;
+  font-size: calc(var(--index) * 2.5);
+  letter-spacing: calc(var(--index) / 2);
+}
+.layers__base {
+  transform: translate3d(0, calc(var(--scrollTop) / 1.5), 0);
+  z-index: 0;
+}
+.layers__title {
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__end {
+  transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
+}
+
+.main-article {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color-text-light);
+}
+.main-article__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 1.8);
+  letter-spacing: calc(var(--index) / 5);
+  transform: translate3d(0, calc(var(--scrollTop) / -17), 0);
+  transition: var(--transition);
+}
+.main-article__text {
+  max-width: calc(var(--index) * 45);
+  font-size: calc(var(--index) * 1.1);
+  margin-top: calc(var(--index) * 1.7);
+  letter-spacing: calc(var(--index) / 18);
+  transform: translate3d(0, calc(var(--scrollTop) / -17), 0);
+  transition: var(--transition);
+}
+.main-article__text-bold {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: var(--transform);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-shadow: 0 0 10px var(--shadow-green);
+  transition: var(--transition);
+}
+
+.copyright {
+  position: absolute;
+  bottom: calc(var(--index) * 2);
+  font-size: calc(var(--index) * 0.8);
+  letter-spacing: calc(var(--index) / 18);
+  opacity: 0.5;
+}/*# sourceMappingURL=styles.css.map */
