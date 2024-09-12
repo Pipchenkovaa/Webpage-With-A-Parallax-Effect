@@ -189,6 +189,7 @@ body {
 }
 
 .content {
+  min-height: 100vh;
   will-change: var(--transform);
 }
 
