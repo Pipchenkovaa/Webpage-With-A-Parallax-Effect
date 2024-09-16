@@ -8,11 +8,11 @@ This is a simple website with a parallax effect, created primarily using JavaScr
 <li>The depth effect is achieved through smooth scrolling animation and a multi-layered background image / Эффект глубины достигается за счёт плавной анимации при прокрутке и многослойного фонового изображения</li>
 
 <h3> <b> ⚙️ Structure / Структура </b> </h3>
-<li><b>«libs/»</b> contains modules of the GSAP library / содержит модули библиотеки GSAP</li>
-<li><b>«js/»</b> contains all JavaScript files / содержит все скрипты</li>
-<li><b>«fonts/»</b> contains custom fonts / содержит кастомные шрифты</li>
-<li><b>«images/»</b> contains image assets used on the website / содержит использованные в проекте изображения </li>
-<li><b>«css/»</b> contains custom styles / содержит файлы со стилями</li>
+<li><b>«libs/»</b> contains modules of the GSAP library / папка «libs» содержит модули библиотеки GSAP</li>
+<li><b>«js/»</b> contains all JavaScript files / папка «js» содержит все скрипты</li>
+<li><b>«fonts/»</b> contains custom fonts / папка «fonts» содержит кастомные шрифты</li>
+<li><b>«images/»</b> contains image assets used on the website / папка «images» содержит использованные в проекте изображения </li>
+<li><b>«css/»</b> contains custom styles / папка «css» содержит файлы со стилями</li>
 
 <h3> <b> Built With / Использованные технологии </b> </h3>
 HTML5 / CSS3 / SCSS / JavaScript (ES6+) / GSAP / Photoshop
