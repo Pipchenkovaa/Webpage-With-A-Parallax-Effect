@@ -1,10 +1,10 @@
-<h1> Website With A Parallax Effect / Сайт с Эффектом Параллакса </h1>
-This is a simple website with a parallax effect, created primarily using JavaScript, GSAP (The GreenSock Animation Platform), which is a powerful library for creating animations in JavaScript, and Adobe Photoshop. The main features of this project include smooth scrolling and 3D effects.
+<h1> Webpage With A Parallax Effect / Веб-страница с Эффектом Параллакса </h1>
+This is a simple webpage with a parallax effect, created primarily using JavaScript, GSAP (The GreenSock Animation Platform), which is a powerful library for creating animations in JavaScript, and Adobe Photoshop. The main features of this project include smooth scrolling and 3D effects.
 
-<br>Это простой сайт с эффектом параллакса, созданный с помощью языка JavaScript, GSAP - мощной библиотеки для создания анимаций на JavaScript, а также  Adobe Photoshop. Отличительными особенностями данного проекта являются плавный скроллинг и 3D-эффекты.
+<br>Это простая веб-страница с эффектом параллакса, созданная с помощью языка JavaScript, GSAP - мощной библиотеки для создания анимаций на JavaScript, а также  Adobe Photoshop. Отличительными особенностями данного проекта являются плавный скроллинг и 3D-эффекты.
 
 <h3> <b> 💡 Features / Особенности </b> </h3>
-<li>The site is responsive to different screen sizes / Сайт адаптирован к различным размерам экрана</li>
+<li>The webpage is responsive to different screen sizes / Веб-страница адаптирована под различные размеры экранов</li>
 <li>The depth effect is achieved through smooth scrolling animation and a multi-layered background image / Эффект глубины достигается за счёт плавной анимации при прокрутке и многослойного фонового изображения</li>
 
 <h3> <b> ⚙️ Structure / Структура </b> </h3>
@@ -19,8 +19,8 @@ HTML5 / CSS3 / SCSS / JavaScript (ES6+) / GSAP / Photoshop
 
 <h3> <b> Run this project locally / Для запуска проекта локально: </b> </h3>
 
-1) Clone the repository / Клонируем репозиторий: `git clone https://github.com/Pipchenkovaa/Website-With-A-Parallax-Effect.git`<br>
-2) Navigate to the project directory / Переходим в директорию проекта: `cd Website-With-A-Parallax-Effect`<br>
+1) Clone the repository / Клонируем репозиторий: `git clone https://github.com/Pipchenkovaa/Webpage-With-A-Parallax-Effect.git`<br>
+2) Navigate to the project directory / Переходим в директорию проекта: `cd Webpage-With-A-Parallax-Effect`<br>
 3) Install dependencies / Устанавливаем необходимые модули и пакеты: `npm install`<br>
 4) Start the development server / Запускаем скрипт для сборки JavaScript модулей: `npm start`<br>
 5) Open the project in your browser / Открываем проект локально в браузере: `http://localhost:3000`<br>
